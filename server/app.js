@@ -16,7 +16,7 @@ const cors       = require("cors");
     
 
 mongoose
-  .connect(process.env.DB_LOCAL, {
+  .connect(`${process.env.DB_LOCAL}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -88,10 +88,15 @@ require('./passport')(app);
     
 
 const index = require('./routes/index');
-app.use('/', index);
+app.use('/api', index);
 
 const authRoutes = require('./routes/auth');
-app.use('/auth', authRoutes);
+app.use('/api/auth', authRoutes);
       
+
+app.use((req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
+
 
 module.exports = app;
