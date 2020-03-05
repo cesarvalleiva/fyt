@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
@@ -19,7 +19,7 @@ class App extends Component {
 		this.setState({
 			loggedInUser: userObj
 		});
-		this.props.history.push('/');
+		// this.props.history.push('/');
 	};
 
 	logout = () => {
@@ -53,6 +53,7 @@ class App extends Component {
 			<div className="App">
 				{loggedInUser ? (
 					<div>
+						<Redirect to="/" />
 						<Navbar userInSession={loggedInUser} logout={this.logout} />
 						<Switch>
 							<Route exact path="/" render={() => <Home {...this.state} />} />
@@ -65,7 +66,7 @@ class App extends Component {
 						<Switch>
 							<Route exact path="/" render={() => <Home {...this.state} />} />
 							<Route exact path="/" render={() => <h1>LO SIENTO HULIO, NO ESTAS LOGUEADO</h1>} />
-							<Route exact path="/login" component={Login} />
+							<Route exact path="/login" render={() => <Login getUser={(user) => this.getUser(user)} />} />
 							<Route exact path="/signup" component={Signup} />
 						</Switch>
 					</div>

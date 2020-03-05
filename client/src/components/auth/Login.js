@@ -24,6 +24,7 @@ class Login extends Component {
         });
         this.props.getUser(response);
       })
+
       .catch(error => {
         console.log("entra en error");
       });

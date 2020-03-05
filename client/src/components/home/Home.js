@@ -15,7 +15,7 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://localhost:4000/trainers').then((trainers) => {
+		axios.get('http://localhost:4000/api/trainers').then((trainers) => {
 			this.setState({
 				...this.state,
 				trainers: trainers.data
