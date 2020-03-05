@@ -1,0 +1,78 @@
+import React, { Component } from 'react';
+import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
+import Signup from './components/auth/Signup';
+import Login from './components/auth/Login';
+import AuthService from './components/auth/AuthService';
+// import Contents from "./components/contents/Contents";
+import Home from './components/home/Home';
+
+class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { loggedInUser: null };
+		this.service = new AuthService();
+	}
+
+	getUser = (userObj) => {
+		this.setState({
+			loggedInUser: userObj
+		});
+		this.props.history.push('/');
+	};
+
+	logout = () => {
+		this.service.logout().then(() => {
+			this.setState({ loggedInUser: null });
+		});
+	};
+
+	fetchUser() {
+		return this.service
+			.loggedin()
+			.then((response) => {
+				this.setState({
+					loggedInUser: response
+				});
+			})
+			.catch((err) => {
+				this.setState({
+					loggedInUser: false
+				});
+			});
+	}
+
+	componentDidMount() {
+		this.fetchUser();
+	}
+
+	render() {
+		const { loggedInUser } = this.state;
+		return (
+			<div className="App">
+				{loggedInUser ? (
+					<div>
+						<Navbar userInSession={loggedInUser} logout={this.logout} />
+						<Switch>
+							<Route exact path="/" render={() => <Home {...this.state} />} />
+							<Route exact path="/trainers" component={Home} />
+						</Switch>
+					</div>
+				) : (
+					<div>
+						<Navbar />
+						<Switch>
+							<Route exact path="/" render={() => <Home {...this.state} />} />
+							<Route exact path="/" render={() => <h1>LO SIENTO HULIO, NO ESTAS LOGUEADO</h1>} />
+							<Route exact path="/login" component={Login} />
+							<Route exact path="/signup" component={Signup} />
+						</Switch>
+					</div>
+				)}
+			</div>
+		);
+	}
+}
+
+export default App;
