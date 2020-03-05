@@ -55,7 +55,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "https://ironfyt.herokuapp.com"]
+    origin: ["http://localhost:3000"]
   })
 );
 
