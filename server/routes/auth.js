@@ -7,8 +7,6 @@ const passport = require("passport");
 const login = (req, user) => {
   return new Promise((resolve, reject) => {
     req.login(user, err => {
-      console.log("req.login ");
-      console.log(user);
 
       if (err) {
         reject(new Error("Something went wrong"));
@@ -22,9 +20,6 @@ const login = (req, user) => {
 // SIGNUP
 router.post("/signup", (req, res, next) => {
   const { username, password } = req.body;
-
-  console.log("username", username);
-  console.log("password", password);
 
   // Check for non empty user or password
   if (!username || !password) {
@@ -41,8 +36,7 @@ router.post("/signup", (req, res, next) => {
 
       return new User({
         username,
-        password: hashPass,
-        imgPath: '../images/user.png'
+        password: hashPass
       }).save();
     })
     .then(savedUser => login(req, savedUser)) // Login the user using passport
@@ -62,7 +56,6 @@ router.post("/login", (req, res, next) => {
 });
 
 router.get("/currentUser", (req, res, next) => {
-  console.log("ENTRA EN CURRENTUSER");
   if (req.user) {
     res.status(200).json(req.user);
   } else {

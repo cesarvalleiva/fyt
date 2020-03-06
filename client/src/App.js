@@ -65,9 +65,8 @@ class App extends Component {
 						<Navbar />
 						<Switch>
 							<Route exact path="/" render={() => <Home {...this.state} />} />
-							<Route exact path="/" render={() => <h1>LO SIENTO HULIO, NO ESTAS LOGUEADO</h1>} />
 							<Route exact path="/login" render={() => <Login getUser={(user) => this.getUser(user)} />} />
-							<Route exact path="/signup" component={Signup} />
+							<Route exact path="/signup" render={() => <Signup getUser={(user) => this.getUser(user)} />} />
 						</Switch>
 					</div>
 				)}

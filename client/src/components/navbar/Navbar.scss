@@ -1,5 +1,9 @@
 .nav-style {
+	z-index: 10;
+	position: fixed;
+
 	ul {
+		height: 70px;
 		display: flex;
 		list-style-type: none;
 		justify-content: space-between;
@@ -7,7 +11,17 @@
 		width: 100vw;
 		box-sizing: border-box;
 		padding: 10px 20px;
-		background-color: rgb(53, 58, 64)
+		background-color: rgb(34, 39, 60);
+	}
+
+	.menu {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.logo {
+		width: 120px;
 	}
 
 	.options {
@@ -23,9 +37,13 @@
 		}
 	}
 
+	.dropdown-toggle::after {
+    	display:none;
+	}
+
 	li img {
 		border-radius: 50%;
-		width: 40px;
+		width: 45px;
 		display: block;
 		object-fit: contain;
 	}
@@ -36,7 +54,21 @@
 		align-items: center;
 	}
 
+	.options li {
+		color: #fff;
+		margin-right: 3px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
 	.header img {
 		margin-right: 20px;
+	}
+
+	ul .login {
+		display: flex;
+		align-items: space-between;
 	}
 }

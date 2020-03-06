@@ -6,7 +6,7 @@ require("dotenv").config();
 
 function dbConnect(cb) {
   mongoose
-    .connect(`${process.env.DB_URL}`, {
+    .connect(`${process.env.DB_LOCAL}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
@@ -77,13 +77,37 @@ dbConnect(() => {
       name: "Fran Naranjo",
       telephone: getPhone(),
       mobile: getMobile(),
-      email: "quiquemontano@gmail.com",
+      email: "frannaranjo@gmail.com",
       imgPath: faker.image.avatar(),
       role: "trainer",
       mode: ["online", "presencial"]
     },
     {
       _id: id_user[2],
+      username: "danivicario",
+      password: bcrypt.hashSync("trainer", bcrypt.genSaltSync(saltRounds)),
+      name: "Daniel Vicario",
+      telephone: getPhone(),
+      mobile: getMobile(),
+      email: "danivicario@gmail.com",
+      imgPath: faker.image.avatar(),
+      role: "trainer",
+      mode: ["online", "presencial"]
+    },
+    {
+      _id: id_user[3],
+      username: "german",
+      password: bcrypt.hashSync("trainer", bcrypt.genSaltSync(saltRounds)),
+      name: "German Perez",
+      telephone: getPhone(),
+      mobile: getMobile(),
+      email: "germanperez@gmail.com",
+      imgPath: faker.image.avatar(),
+      role: "trainer",
+      mode: ["online", "presencial"]
+    },
+    {
+      _id: id_user[4],
       username: "cesar",
       password: bcrypt.hashSync("user", bcrypt.genSaltSync(saltRounds)),
       name: "Cesar Val Leiva",
