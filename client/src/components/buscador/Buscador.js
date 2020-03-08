@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import { Search } from 'react-bootstrap-icons';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import './Buscador.scss';
 
 export default class Buscador extends Component {
@@ -19,9 +20,31 @@ export default class Buscador extends Component {
 	render() {
 		return (
 			<div className="container-search">
-				<div className="container-form">
-					<div className="form">
-						<Form.Control as="select" className="w-25 border-0">
+				<div className="container-header">
+					<div>
+						<Row>
+							<Col>
+								<h1 className="titulo">Encontrá tu mejor versión</h1>
+							</Col>
+						</Row>
+						<Row>
+							<Col>
+								<Link to="/online">
+									<Button variant="none" className="button-online">
+										Online
+									</Button>
+								</Link>
+							</Col>
+							<Col>
+								<Link to="/presencial">
+									<Button variant="none" className="button-online">
+										Presencial
+									</Button>
+								</Link>
+							</Col>
+						</Row>
+
+						{/* <Form.Control as="select" className="w-25 border-0">
 							<option>Online</option>
 							<option>Presencial</option>
 						</Form.Control>
@@ -32,16 +55,9 @@ export default class Buscador extends Component {
 						/>
 						<Button variant="primary" className="button-search" type="submit">
 							<Search /> Buscar
-						</Button>
+						</Button> */}
 					</div>
 				</div>
-				{/* <div className="container-form2">
-                    <h1>Elegí tu modalidad</h1>
-					<div className="form2">
-						<Button variant="primary">Presencial</Button>
-						<Button variant="primary">Online</Button>
-					</div>
-				</div> */}
 			</div>
 		);
 	}

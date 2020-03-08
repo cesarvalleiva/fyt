@@ -25,6 +25,7 @@ class Home extends Component {
 				trainers: trainers.data
 			});
 		});
+		console.log(this.state.trainers.length);
 	}
 	render() {
 		return (

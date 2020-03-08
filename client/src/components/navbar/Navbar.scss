@@ -38,7 +38,7 @@
 	}
 
 	.dropdown-toggle::after {
-    	display:none;
+		display: none;
 	}
 
 	li img {
@@ -70,5 +70,14 @@
 	ul .login {
 		display: flex;
 		align-items: space-between;
+	}
+
+	.login-link {
+		color: #fff;
+
+		&:hover {
+			text-decoration: none;
+			color: rgb(200, 200, 200);
+		}
 	}
 }

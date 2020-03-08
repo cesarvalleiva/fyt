@@ -5,7 +5,6 @@ import Navbar from './components/navbar/Navbar';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import AuthService from './components/auth/AuthService';
-// import Contents from "./components/contents/Contents";
 import Home from './components/home/Home';
 
 class App extends Component {
@@ -65,8 +64,16 @@ class App extends Component {
 						<Navbar />
 						<Switch>
 							<Route exact path="/" render={() => <Home {...this.state} />} />
-							<Route exact path="/login" render={() => <Login getUser={(user) => this.getUser(user)} />} />
-							<Route exact path="/signup" render={() => <Signup getUser={(user) => this.getUser(user)} />} />
+							<Route
+								exact
+								path="/login"
+								render={() => <Login getUser={(user) => this.getUser(user)} />}
+							/>
+							<Route
+								exact
+								path="/signup"
+								render={() => <Signup getUser={(user) => this.getUser(user)} />}
+							/>
 						</Switch>
 					</div>
 				)}

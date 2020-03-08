@@ -59,10 +59,10 @@ function Navbar(props) {
 						</div>
 						<div className="login">
 							<li>
-								<Link to="/signup">Signup</Link>
+								<Link to="/login" className="login-link">Login</Link>
 							</li>
 							<li>
-								<Link to="/login">Login</Link>
+								<Link to="/signup" className="login-link">Signup</Link>
 							</li>
 						</div>
 					</ul>

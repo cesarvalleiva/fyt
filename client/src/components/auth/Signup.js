@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AuthService from './AuthService';
+import { Link } from 'react-router-dom';
 import './Login.scss';
 
 //signup y login son iguales a excepción de el html renderizado y el endpoint de nuestra API rest a la que llamamos
@@ -7,20 +8,31 @@ import './Login.scss';
 class Signup extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { username: '', password: '' };
+		this.state = { username: '', password: null };
 		this.service = new AuthService();
 	}
 
-	handleFormSubmit = (event) => {
-		event.preventDefault();
-		const username = this.state.username;
-		const password = this.state.password;
+	handleGoogleSubmit = (data) => {
+		console.log("entra en el handle de google")
+		console.log(data)
+		this.setState({
+			username: data.profileObj.givenName
+		},()=>{
+			this.handleFormSubmit()
+		})	
+	}
 
+	handleFormSubmit = (event) => {
+		event && event.preventDefault();
+		
+		const username = this.state.username;
+		const password = this.state.password ? this.state.password : "1234";
+	
+		
 		//aquí llamamos al endpoint /signup de nuestra API Rest usando nuestro AuthService
 		this.service
 			.signup(username, password)
 			.then((response) => {
-				console.log(response);
 				this.setState({
 					username: username,
 					password: password
@@ -45,33 +57,57 @@ class Signup extends Component {
 	};
 
 	render() {
+	
 		return (
 			<div className="container-login">
-				<form onSubmit={this.handleFormSubmit}>
-					<fieldset>
-						<label>Username:</label>
-						<input
-							type="text"
-							name="username"
-							value={this.state.username}
-							onChange={(e) => this.handleChange(e)}
-						/>
-					</fieldset>
+				<div className="container-form">
+					{/* <ul className="list-links">
+						<Link to="/login" className="link">
+							<li>Login</li>
+						</Link>
+						<Link to="/signup" className="link active">
+							<li>Sign up</li>
+						</Link>
+					</ul> */}
+					<form onSubmit={this.handleFormSubmit}>
+						<fieldset>
+							<label>Nombre completo:</label>
+							<input
+								className="input-login"
+								type="text"
+								name="username"
+								value={this.state.username}
+								onChange={(e) => this.handleChange(e)}
+							/>
+						</fieldset>
+						<fieldset>
+							<label>Usuario:</label>
+							<input
+								className="input-login"
+								type="text"
+								name="username"
+								value={this.state.username}
+								onChange={(e) => this.handleChange(e)}
+							/>
+						</fieldset>
+						<fieldset>
+							<label>Contraseña:</label>
+							<input
+								className="input-login"
+								type="password"
+								name="password"
+								value={this.state.password}
+								onChange={(e) => this.handleChange(e)}
+							/>
+						</fieldset>
+						<input type="submit" value="Crear usuario" className="button-login signup" />
+						<Link to="/login" className="volver">
+							<p>Volver al login</p>
+						</Link>
+					</form>
 
-					<fieldset>
-						<label>Password:</label>
-						<input
-							type="password"
-							name="password"
-							value={this.state.password}
-							onChange={(e) => this.handleChange(e)}
-						/>
-					</fieldset>
-
-					<input type="submit" value="Sign up" />
-				</form>
-
-				<h1>{this.state.error ? 'Error' : ''}</h1>
+					<h1>{this.state.error ? 'Error' : ''}</h1>
+				</div>
 			</div>
 		);
 	}
