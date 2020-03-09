@@ -1,0 +1,161 @@
+body {
+	background-color: rgb(230, 230, 230);
+}
+
+.online {
+	font-family: 'Titillium Web', sans-serif;
+	padding-top: 70px;
+	padding-right: 20px;
+	display: flex;
+
+	.navigation {
+		width: 25%;
+		margin-top: 30px;
+		background-color: rgb(230, 230, 230);
+		color: rgb(34, 39, 60);
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+
+		.title-filter {
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		.buscar {
+			width: 90%;
+			height: 35px;
+			font-size: 14px;
+			margin: 20px 0;
+		}
+
+		.cantidad {
+			font-size: 14px;
+			color: rgb(118, 118, 118);
+		}
+
+		ul {
+			list-style-type: none;
+			padding-left: 0;
+			margin-bottom: 30px;
+		}
+	}
+
+	.container-trainers {
+		width: 70%;
+		height: 100%;
+		margin: 0 auto;
+		margin-top: 30px;
+		margin-bottom: 20px;
+		padding: 0;
+		text-align: left;
+		background-color: #fff;
+
+		ul {
+			padding-left: 0;
+			list-style-type: none;
+			margin: 20px;
+		}
+
+		.list-trainers {
+			width: 100%;
+			display: flex;
+			margin-bottom: 20px;
+			padding-bottom: 10px;
+			padding-left: 0;
+			border-bottom: 1px solid rgb(200, 200, 200);
+
+			.img-profe {
+				width: 20%;
+
+				img {
+					border-radius: 5px;
+				}
+			}
+
+			.descripcion-profe {
+				width: 65%;
+				display: flex;
+				flex-direction: column;
+				padding-left: 0;
+				font-size: 18px;
+
+				.link {
+					color: rgb(34, 39, 60);
+					font-weight: bold;
+
+					&:hover {
+						text-decoration: none;
+						color: rgb(150, 150, 150);
+					}
+				}
+
+				.planes {
+					width: 100%;
+					margin-top: 7px;
+					font-size: 14px;
+				}
+				.footer-card {
+					width: 25%;
+					margin-top: 20px;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+
+					.stars {
+						font-size: 14px;
+						margin-bottom: 0;
+						display: flex;
+						color: rgb(34, 39, 60);
+					}
+
+					.comments {
+						width: 40px;
+						font-size: 14px;
+						margin-bottom: 0;
+						margin-left: 10px;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						color: rgb(34, 39, 60);
+
+						.chat-icon {
+							font-size: 17px;
+							color: rgb(34, 39, 60);
+						}
+					}
+				}
+			}
+
+			.precio-profe {
+				width: 15%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				.social {
+					width: 45%;
+					font-size: 22px;
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					margin-bottom: 10px;
+				}
+
+				.button {
+					background-color:  rgb(34, 39, 60);
+					color: #fff;
+
+					&:hover {
+						background-color:  rgb(72, 88, 179);
+					}
+				}
+
+				span {
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
+}

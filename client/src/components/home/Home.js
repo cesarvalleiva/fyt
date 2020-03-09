@@ -25,7 +25,7 @@ class Home extends Component {
 				trainers: trainers.data
 			});
 		});
-		console.log(this.state.trainers.length);
+		// console.log(this.state.trainers.length);
 	}
 	render() {
 		return (
@@ -39,7 +39,7 @@ class Home extends Component {
 							<React.Fragment key={trainer._id}>
 								<Card className="card">
 									<Link
-										to={this.props.loggedInUser ? `/trainer/${trainer._id}` : `/login`}
+										to={this.props.loggedInUser ? `/online/trainer/${trainer._id}` : `/login`}
 										className="link"
 									>
 										<Card.Img variant="top" src={trainer.imgPath} alt={trainer.name} />
@@ -47,7 +47,7 @@ class Home extends Component {
 									<Card.Body>
 										<Card.Title>
 											<Link
-												to={this.props.loggedInUser ? `/trainer/${trainer._id}` : `/login`}
+												to={this.props.loggedInUser ? `/online/trainer/${trainer._id}` : `/login`}
 												className="link"
 											>
 												{trainer.name}

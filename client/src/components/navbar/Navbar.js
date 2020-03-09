@@ -24,11 +24,12 @@ function Navbar(props) {
 						</li>
 					</div>
 					<div className="options">
-						<li>{userInSession.name ? userInSession.name : userInSession.username}</li>
+						{/* <li>{userInSession.name ? userInSession.name : userInSession.username}</li> */}
 						<li>
 							<Dropdown>
 								<Dropdown.Toggle variant="none">
-									<img src={userInSession.imgPath} alt={userInSession.username} />
+									{userInSession.name ? userInSession.name : userInSession.username}
+									<img src={userInSession.imgPath} alt={userInSession.username} className="img-user" />
 								</Dropdown.Toggle>
 
 								<Dropdown.Menu>
@@ -60,9 +61,6 @@ function Navbar(props) {
 						<div className="login">
 							<li>
 								<Link to="/login" className="login-link">Login</Link>
-							</li>
-							<li>
-								<Link to="/signup" className="login-link">Signup</Link>
 							</li>
 						</div>
 					</ul>

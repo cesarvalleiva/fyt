@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/Login';
 import AuthService from './components/auth/AuthService';
 import Home from './components/home/Home';
+import Online from './components/online/Online';
+import Trainer from './components/trainer/Trainer';
 
 class App extends Component {
 	constructor(props) {
@@ -52,11 +54,12 @@ class App extends Component {
 			<div className="App">
 				{loggedInUser ? (
 					<div>
-						<Redirect to="/" />
+						{/* <Redirect to="/" /> */}
 						<Navbar userInSession={loggedInUser} logout={this.logout} />
 						<Switch>
 							<Route exact path="/" render={() => <Home {...this.state} />} />
-							<Route exact path="/trainers" component={Home} />
+							<Route exact path="/online" render={() => <Online {...this.state} />} />
+							<Route exact path="/online/trainer/:id" render={props => { return <Trainer trainerId={props.match.params.id}></Trainer>; }}/>
 						</Switch>
 					</div>
 				) : (
@@ -64,16 +67,8 @@ class App extends Component {
 						<Navbar />
 						<Switch>
 							<Route exact path="/" render={() => <Home {...this.state} />} />
-							<Route
-								exact
-								path="/login"
-								render={() => <Login getUser={(user) => this.getUser(user)} />}
-							/>
-							<Route
-								exact
-								path="/signup"
-								render={() => <Signup getUser={(user) => this.getUser(user)} />}
-							/>
+							<Route exact path="/login" render={() => <Login getUser={(user) => this.getUser(user)} />} />
+							<Route exact path="/signup" render={() => <Signup getUser={(user) => this.getUser(user)} />} />
 						</Switch>
 					</div>
 				)}

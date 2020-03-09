@@ -13,4 +13,11 @@ router.get("/trainers", (req, res, next) => {
   });
 });
 
+router.get("/trainer/:id", (req, res, next) => {
+  User.findById(req.params.id)
+  .then(trainer => {
+    res.json(trainer);
+  });
+});
+
 module.exports = router;

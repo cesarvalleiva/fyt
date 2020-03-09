@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from './AuthService';
 import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'react-bootstrap-icons';
 import './Login.scss';
 
 //signup y login son iguales a excepción de el html renderizado y el endpoint de nuestra API rest a la que llamamos
@@ -13,22 +14,24 @@ class Signup extends Component {
 	}
 
 	handleGoogleSubmit = (data) => {
-		console.log("entra en el handle de google")
-		console.log(data)
-		this.setState({
-			username: data.profileObj.givenName
-		},()=>{
-			this.handleFormSubmit()
-		})	
-	}
+		console.log('entra en el handle de google');
+		console.log(data);
+		this.setState(
+			{
+				username: data.profileObj.givenName
+			},
+			() => {
+				this.handleFormSubmit();
+			}
+		);
+	};
 
 	handleFormSubmit = (event) => {
 		event && event.preventDefault();
-		
+
 		const username = this.state.username;
-		const password = this.state.password ? this.state.password : "1234";
-	
-		
+		const password = this.state.password ? this.state.password : '1234';
+
 		//aquí llamamos al endpoint /signup de nuestra API Rest usando nuestro AuthService
 		this.service
 			.signup(username, password)
@@ -57,7 +60,6 @@ class Signup extends Component {
 	};
 
 	render() {
-	
 		return (
 			<div className="container-login">
 				<div className="container-form">
@@ -101,12 +103,19 @@ class Signup extends Component {
 							/>
 						</fieldset>
 						<input type="submit" value="Crear usuario" className="button-login signup" />
-						<Link to="/login" className="volver">
-							<p>Volver al login</p>
-						</Link>
+						{/* <Link to="/login" className="volver">
+							<ArrowLeft /> Volver al login
+						</Link> */}
 					</form>
 
 					<h1>{this.state.error ? 'Error' : ''}</h1>
+				</div>
+				<div className="container-volver">
+					<Link to="/login" className="volver">
+						<p>
+							<ArrowLeft /> Volver al login
+						</p>
+					</Link>
 				</div>
 			</div>
 		);

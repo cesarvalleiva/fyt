@@ -1,3 +1,7 @@
+body {
+	font-family: 'Titillium Web', sans-serif;
+}
+
 .container-login {
 	box-sizing: border-box;
 	background-image: url('/images/running.jpg');
@@ -11,43 +15,35 @@
 	align-items: center;
 	flex-direction: column;
 
-	// .list-links {
-	// 	width: 90%;
-	// 	display: flex;
-	// 	justify-content: space-between;
-	// 	list-style-type: none;
-	// 	padding-left: 0;
+	.link {
+		width: 49%;
+		padding: 10px 0;
+		color: rgb(0, 16, 59);
+		border-bottom: 2px solid #fff;
+		margin-right: 5px;
+		cursor: pointer;
+		background-color: rgb(151, 151, 151);
 
-		.link {
-			width: 49%;
-			padding: 10px 0;
-			color: rgb(0, 16, 59);
-			border-bottom: 2px solid #fff;
-			margin-right: 5px;
-			cursor: pointer;
-			background-color: rgb(151, 151, 151);
-
-			&:hover {
-				background-color: rgb(219, 219, 219);
-				text-decoration: none;
-			}
+		&:hover {
+			background-color: rgb(219, 219, 219);
+			text-decoration: none;
 		}
+	}
 
-		.active {
-			background-color: rgb(200, 200, 200);
-		}
+	.active {
+		background-color: rgb(200, 200, 200);
+	}
 	// }
 
 	.container-form {
 		width: 450px;
 		min-height: 350px;
-		padding: 20px 0 0 0;
+		padding: 15px 0 0 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		background-color: #fff;
-		// background-color: rgb(35, 39, 59);
 		-webkit-box-shadow: 0px 14px 15px -2px rgba(0, 0, 0, 0.75);
 		-moz-box-shadow: 0px 14px 15px -2px rgba(0, 0, 0, 0.75);
 		box-shadow: 0px 14px 15px -2px rgba(0, 0, 0, 0.75);
@@ -64,8 +60,10 @@
 		height: 40px;
 		text-align: center;
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		padding-top: 12px;
+		padding-left: 22px;
+		padding-right: 22px;
 		align-items: center;
 		font-size: 14px;
 
@@ -80,8 +78,19 @@
 		}
 	}
 
-	.volver {
-		text-align: left;
+	.container-volver {
+		width: 450px;
+		height: 40px;
+		display: flex;
+		justify-content: flex-start;
+		padding-top: 12px;
+		padding-left: 22px;
+		align-items: center;
+		font-size: 14px;
+
+		background-color: rgb(236, 236, 236);
+
+		.volver {
 		font-size: 14px;
 		color: rgb(71, 96, 162);
 
@@ -89,6 +98,9 @@
 			text-decoration: none;
 		}
 	}
+	}
+
+	
 
 	.input-login {
 		width: 100%;
@@ -96,10 +108,8 @@
 		font-size: 14px;
 		border: 1px solid rgb(200, 200, 200);
 		border-radius: 2px;
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 		padding-left: 10px;
-		// background-color: rgb(90, 121, 205);
-		// background-color: rgb(200, 200, 200);
 	}
 
 	.button-login {
@@ -138,7 +148,7 @@
 			width: 50%;
 			margin-right: 5px;
 
-			&:last-child{
+			&:last-child {
 				margin-right: 0;
 			}
 

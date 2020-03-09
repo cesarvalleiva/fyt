@@ -6,6 +6,7 @@ import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { PersonFill } from 'react-bootstrap-icons';
+import { PeopleFill } from 'react-bootstrap-icons';
 import './Login.scss';
 
 class Login extends Component {
@@ -44,15 +45,6 @@ class Login extends Component {
 		return (
 			<div className="container-login">
 				<div className="container-form">
-					{/* <ul className="list-links">
-						<Link to="/login" className="link active">
-							<li>Login</li>
-						</Link>
-						<Link to="/signup" className="link">
-							<li>Crear cuenta</li>
-						</Link>
-					</ul> */}
-
 					<form onSubmit={this.handleFormSubmit}>
 						<fieldset>
 							<label>Usuario:</label>
@@ -106,6 +98,9 @@ class Login extends Component {
 				<div className="crear-cuenta">
 					<Link to="/signup" className="link-crear-cuenta">
 						<p>Crear nueva cuenta <PersonFill /></p>
+					</Link>
+					<Link to="/signup" className="link-crear-cuenta">
+						<p>Eres profe? <PeopleFill /></p>
 					</Link>
 				</div>
 			</div>

@@ -1,6 +1,7 @@
 .nav-style {
 	z-index: 10;
 	position: fixed;
+	font-family: 'Titillium Web', sans-serif;
 
 	ul {
 		height: 70px;
@@ -37,6 +38,17 @@
 		}
 	}
 
+	.dropdown-toggle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+
+		.img-user {
+			margin-left: 10px;
+		}
+	}
+	
 	.dropdown-toggle::after {
 		display: none;
 	}
