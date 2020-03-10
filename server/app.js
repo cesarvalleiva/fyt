@@ -52,7 +52,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-var whitelist = ["http://localhost:3000", "http://localhost:4000"];
+var whitelist = ["http://localhost:3000"];
 var corsOptions = {
   origin: function(origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
