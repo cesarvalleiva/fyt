@@ -68,7 +68,8 @@ dbConnect(() => {
       email: "quiquemontano@gmail.com",
       imgPath: faker.image.avatar(),
       role: "trainer",
-      mode: ["online", "presencial"]
+      mode: ["online", "presencial"],
+      speciality: ["perder peso", "ganar masa muscular"]
     },
     {
       _id: id_user[1],
@@ -80,7 +81,8 @@ dbConnect(() => {
       email: "frannaranjo@gmail.com",
       imgPath: faker.image.avatar(),
       role: "trainer",
-      mode: ["online", "presencial"]
+      mode: ["online", "presencial"],
+      speciality: ["perder peso", "ganar masa muscular", "maraton"]
     },
     {
       _id: id_user[2],
@@ -92,19 +94,21 @@ dbConnect(() => {
       email: "danivicario@gmail.com",
       imgPath: faker.image.avatar(),
       role: "trainer",
-      mode: ["online", "presencial"]
+      mode: ["online", "presencial"],
+      speciality: ["perder peso", "maraton"]
     },
     {
       _id: id_user[3],
       username: "german",
       password: bcrypt.hashSync("trainer", bcrypt.genSaltSync(saltRounds)),
-      name: "German Perez",
+      name: "German Alvarez",
       telephone: getPhone(),
       mobile: getMobile(),
-      email: "germanperez@gmail.com",
+      email: "germanalvarez@gmail.com",
       imgPath: faker.image.avatar(),
       role: "trainer",
-      mode: ["online", "presencial"]
+      mode: ["online", "presencial"],
+      speciality: ["ganar masa muscular"]
     },
     {
       _id: id_user[4],

@@ -14,9 +14,11 @@ const userSchema = new Schema(
     weight: Number,
     targetWeight: Number,
     imgPath: String,
+    qualification: [],
     role: { type: String, enum: ["user", "trainer"], default: "user" },
     mode: [{ type: String, enum: ["online", "presencial"]}],
     speciality: [{ type: String, enum: ["perder peso", "ganar masa muscular", "maraton"]}],
+    place: [{ type: String, enum: ["gimansio", "casa"]}],
     about: String,
     plan: [{ type: Schema.Types.ObjectId, ref: "Plan" }]
   },

@@ -52,12 +52,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(
-  cors({
-    credentials: true,
-    origin: ["http://localhost:3000"]
-  })
-);
+var whitelist = ["http://localhost:3000", "http://localhost:4000"];
+var corsOptions = {
+  origin: function(origin, callback) {
+    var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+    callback(null, originIsWhitelisted);
+  },
+  credentials: true
+};
+app.use(cors(corsOptions));
+
 
 hbs.registerHelper('ifUndefined', (value, options) => {
   if (arguments.length < 2)

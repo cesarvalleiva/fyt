@@ -43,19 +43,6 @@ export default class Buscador extends Component {
 								</Link>
 							</Col>
 						</Row>
-
-						{/* <Form.Control as="select" className="w-25 border-0">
-							<option>Online</option>
-							<option>Presencial</option>
-						</Form.Control>
-						<Form.Control
-							type="text"
-							className="search border-0"
-							placeholder="Encontrá tu profesor"
-						/>
-						<Button variant="primary" className="button-search" type="submit">
-							<Search /> Buscar
-						</Button> */}
 					</div>
 				</div>
 			</div>

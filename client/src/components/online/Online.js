@@ -17,15 +17,29 @@ export default class Online extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			allTrainers: [],
 			trainers: []
 		};
+	}
+
+	filterSpeciality(e) {
+		e.preventDefault();
+		let trainsToFilter = [ ...this.state.allTrainers ];
+		trainsToFilter = trainsToFilter.filter((trainer) => {
+			return trainer.speciality.includes(e.target.value);
+		});
+
+		this.setState({
+			trainers: trainsToFilter
+		});
 	}
 
 	componentDidMount() {
 		axios.get('http://localhost:4000/api/trainers').then((trainers) => {
 			this.setState({
 				...this.state,
-				trainers: trainers.data
+				trainers: trainers.data,
+				allTrainers: trainers.data
 			});
 		});
 		// console.log(this.state.trainers.length);
@@ -41,13 +55,19 @@ export default class Online extends Component {
 						<p className="title-filter">Objetivos</p>
 						<ul>
 							<li>
-								Perder peso <span className="cantidad">(4)</span>
+								<button value="perder peso" className="link-filter" onClick={(e) => this.filterSpeciality(e)}>
+									Perder peso <span className="cantidad">(4)</span>
+								</button>
 							</li>
 							<li>
-								Ganar masa muscular <span className="cantidad">(12)</span>
+								<button value="ganar masa muscular" className="link-filter" onClick={(e) => this.filterSpeciality(e)}>
+									Ganar masa muscular <span className="cantidad">(12)</span>
+								</button>
 							</li>
 							<li>
-								Maratón <span className="cantidad">(7)</span>
+								<button value="maraton" className="link-filter" onClick={(e) => this.filterSpeciality(e)}>
+									Maratón <span className="cantidad">(7)</span>
+								</button>
 							</li>
 						</ul>
 						<p className="title-filter">Tipo</p>

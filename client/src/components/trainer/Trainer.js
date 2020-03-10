@@ -6,9 +6,8 @@ import { StarHalf } from 'react-bootstrap-icons';
 import { Star } from 'react-bootstrap-icons';
 import { Envelope } from 'react-bootstrap-icons';
 import { Check } from 'react-bootstrap-icons';
-import EuroIcon from '@material-ui/icons/Euro';
-import DirectionsRunIcon from '@material-ui/icons/DirectionsRun';
 import Button from 'react-bootstrap/Button';
+import Carousel from 'react-bootstrap/Carousel'
 import axios from 'axios';
 import './Trainer.scss';
 
@@ -46,7 +45,7 @@ export default class Trainer extends Component {
 								<StarFill />
 								<StarFill />
 								<StarHalf />
-								<Star /> - 19 comentarios
+								<Star /> <span className="comentarios"> - 19 comentarios</span>
 							</div>
 							<span className="sobreMi">Sobre mi: </span>
 						</span>
@@ -69,13 +68,13 @@ export default class Trainer extends Component {
 						<div className="caracteristica">
 							<Check /> tres
 						</div>
-                        <div className="comprar-plan">
-                            <Button variant="success" className="boton-comprar">
-                                <EuroIcon fontSize="small" /> 19
-                            </Button>
-                        </div>
+						<div className="comprar-plan">
+							<Button variant="none" className="boton-comprar">
+								Comprar €19
+							</Button>
+						</div>
 					</div>
-                    <div className="especialidad">
+					<div className="especialidad">
 						<span>Ganar masa muscular</span>
 						<div className="caracteristica">
 							<Check /> uno
@@ -86,13 +85,13 @@ export default class Trainer extends Component {
 						<div className="caracteristica">
 							<Check /> tres
 						</div>
-                        <div className="comprar-plan">
-                            <Button variant="success" className="boton-comprar">
-                                <EuroIcon fontSize="small" /> 10
-                            </Button>
-                        </div>
+						<div className="comprar-plan">
+							<Button variant="none" className="boton-comprar">
+								Comprar €10
+							</Button>
+						</div>
 					</div>
-                    <div className="especialidad">
+					<div className="especialidad">
 						<span>Maratón</span>
 						<div className="caracteristica">
 							<Check /> uno
@@ -103,12 +102,25 @@ export default class Trainer extends Component {
 						<div className="caracteristica">
 							<Check /> tres
 						</div>
-                        <div className="comprar-plan">
-                            <Button variant="success" className="boton-comprar">
-                                <EuroIcon fontSize="small" /> 15
-                            </Button>
-                        </div>
+						<div className="comprar-plan">
+							<Button variant="none" className="boton-comprar">
+								Comprar €15
+							</Button>
+						</div>
 					</div>
+				</div>
+				<div className="carousel">
+					<Carousel>
+						<Carousel.Item>
+							Comment 1
+						</Carousel.Item>
+						<Carousel.Item>
+							Comment 2
+						</Carousel.Item>
+						<Carousel.Item>
+							Comment 3
+						</Carousel.Item>
+					</Carousel>
 				</div>
 			</div>
 		);
