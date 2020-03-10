@@ -7,7 +7,7 @@ import { Star } from 'react-bootstrap-icons';
 import { Envelope } from 'react-bootstrap-icons';
 import { Check } from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/Button';
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
 import axios from 'axios';
 import './Trainer.scss';
 
@@ -20,7 +20,7 @@ export default class Trainer extends Component {
 	}
 
 	_findTrainer() {
-		axios.get(`http://localhost:4000/api/trainer/${this.props.trainerId}`).then((trainer) => {
+		axios.get(`${process.env.REACT_APP_API_URL}/trainer/${this.props.trainerId}`).then((trainer) => {
 			this.setState({
 				trainer: trainer.data
 			});
@@ -111,15 +111,9 @@ export default class Trainer extends Component {
 				</div>
 				<div className="carousel">
 					<Carousel>
-						<Carousel.Item>
-							Comment 1
-						</Carousel.Item>
-						<Carousel.Item>
-							Comment 2
-						</Carousel.Item>
-						<Carousel.Item>
-							Comment 3
-						</Carousel.Item>
+						<Carousel.Item>Comment 1</Carousel.Item>
+						<Carousel.Item>Comment 2</Carousel.Item>
+						<Carousel.Item>Comment 3</Carousel.Item>
 					</Carousel>
 				</div>
 			</div>

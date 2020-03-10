@@ -35,7 +35,7 @@ export default class Online extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('http://localhost:4000/api/trainers').then((trainers) => {
+		axios.get(`${process.env.REACT_APP_API_URL}/trainers`).then((trainers) => {
 			this.setState({
 				...this.state,
 				trainers: trainers.data,
