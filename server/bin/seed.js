@@ -6,7 +6,7 @@ require("dotenv").config();
 
 function dbConnect(cb) {
   mongoose
-    .connect(`${process.env.DB_LOCAL}`, {
+    .connect(`${process.env.DB_URL}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
