@@ -8,6 +8,7 @@ import AuthService from './components/auth/AuthService';
 import Home from './components/home/Home';
 import Online from './components/online/Online';
 import Trainer from './components/trainer/Trainer';
+import Admin from './components/admin/Admin';
 import Footer from './components/footer/Footer';
 
 class App extends Component {
@@ -34,9 +35,11 @@ class App extends Component {
 		return this.service
 			.loggedin()
 			.then((response) => {
+
 				this.setState({
 					loggedInUser: response
 				});
+				console.log(this.state.loggedInUser.role)
 			})
 			.catch((err) => {
 				this.setState({
@@ -62,6 +65,7 @@ class App extends Component {
 							<Route exact path="/signup"><Redirect to="/" /></Route>
 							<Route exact path="/online" render={() => <Online {...this.state} />} />
 							<Route exact path="/online/trainer/:id" render={(props) => { return <Trainer trainerId={props.match.params.id} />; }} />
+							<Route exact path="/admin" render={() => <Admin {...this.state} />} />
 						</Switch>
 						<Footer />
 					</div>

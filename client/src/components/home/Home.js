@@ -43,6 +43,8 @@ class Home extends Component {
 										className="link"
 									>
 										<Card.Img variant="top" src={trainer.imgPath} alt={trainer.name} />
+										{/* SACAR */}
+										{/* <Card.Img variant="top" src='../images/user.png' alt={trainer.name} /> */}
 									</Link>
 									<Card.Body>
 										<Card.Title>

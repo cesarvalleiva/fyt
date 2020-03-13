@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import AuthService from "../auth/AuthService";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Bell } from 'react-bootstrap-icons';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './Navbar.scss';
 
@@ -24,25 +25,55 @@ function Navbar(props) {
 						</li>
 					</div>
 					<div className="options">
-						{/* <li>{userInSession.name ? userInSession.name : userInSession.username}</li> */}
 						<li>
 							<Dropdown>
 								<Dropdown.Toggle variant="none">
-									{userInSession.name ? userInSession.name : userInSession.username}
-									<img src={userInSession.imgPath} alt={userInSession.username} className="img-user" />
+									<Bell className="bell" />
 								</Dropdown.Toggle>
 
-								<Dropdown.Menu>
-									<Dropdown.Item href="#/action-1">Mi perfil</Dropdown.Item>
-									<Dropdown.Item href="#/action-2">Favoritos</Dropdown.Item>
-									<Dropdown.Divider />
-									<Dropdown.Item href="#/action-3">
-										<Link to="" onClick={handleLogout}>
-											Cerrar sesión
-										</Link>
-									</Dropdown.Item>
+								<Dropdown.Menu className="bell-down">
+									<Dropdown.Item href="#/action-1">Mensajes</Dropdown.Item>
 								</Dropdown.Menu>
 							</Dropdown>
+						</li>
+						<li>
+							{userInSession.role === 'user' ? (
+								<Dropdown>
+									<Dropdown.Toggle variant="none">
+										{userInSession.name ? userInSession.name : userInSession.username}
+										<img src={userInSession.imgPath} alt={userInSession.username} className="img-user" />
+									</Dropdown.Toggle>
+
+									<Dropdown.Menu>
+										<Dropdown.Item href="#/action-1">Mi perfil</Dropdown.Item>
+										<Dropdown.Item href="#/action-2">Mis planes</Dropdown.Item>
+										<Dropdown.Divider />
+										<Dropdown.Item href="#/action-3">
+											<Link to="" onClick={handleLogout}>
+												Cerrar sesión
+											</Link>
+										</Dropdown.Item>
+									</Dropdown.Menu>
+								</Dropdown>
+							) : (
+								<Dropdown>
+									<Dropdown.Toggle variant="none">
+										{userInSession.name ? userInSession.name : userInSession.username}
+										<img src={userInSession.imgPath} alt={userInSession.username} className="img-user" />
+									</Dropdown.Toggle>
+
+									<Dropdown.Menu>
+										<Dropdown.Item href="#/action-1">Mi perfil</Dropdown.Item>
+										<Dropdown.Item href="#/action-2">Mis alumnos</Dropdown.Item>
+										<Dropdown.Divider />
+										<Dropdown.Item href="#/action-3">
+											<Link to="" onClick={handleLogout}>
+												Cerrar sesión
+											</Link>
+										</Dropdown.Item>
+									</Dropdown.Menu>
+								</Dropdown>
+							)}
 						</li>
 					</div>
 				</ul>

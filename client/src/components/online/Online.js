@@ -24,13 +24,13 @@ export default class Online extends Component {
 
 	filterSpeciality(e) {
 		e.preventDefault();
-		let trainsToFilter = [ ...this.state.allTrainers ];
-		trainsToFilter = trainsToFilter.filter((trainer) => {
+		let trainersToFilter = [ ...this.state.allTrainers ];
+		trainersToFilter = trainersToFilter.filter((trainer) => {
 			return trainer.speciality.includes(e.target.value);
 		});
 
 		this.setState({
-			trainers: trainsToFilter
+			trainers: trainersToFilter
 		});
 	}
 
@@ -55,17 +55,29 @@ export default class Online extends Component {
 						<p className="title-filter">Objetivos</p>
 						<ul>
 							<li>
-								<button value="perder peso" className="link-filter" onClick={(e) => this.filterSpeciality(e)}>
+								<button
+									value="perder peso"
+									className="link-filter"
+									onClick={(e) => this.filterSpeciality(e)}
+								>
 									Perder peso <span className="cantidad">(4)</span>
 								</button>
 							</li>
 							<li>
-								<button value="ganar masa muscular" className="link-filter" onClick={(e) => this.filterSpeciality(e)}>
+								<button
+									value="ganar masa muscular"
+									className="link-filter"
+									onClick={(e) => this.filterSpeciality(e)}
+								>
 									Ganar masa muscular <span className="cantidad">(12)</span>
 								</button>
 							</li>
 							<li>
-								<button value="maraton" className="link-filter" onClick={(e) => this.filterSpeciality(e)}>
+								<button
+									value="maraton"
+									className="link-filter"
+									onClick={(e) => this.filterSpeciality(e)}
+								>
 									Maratón <span className="cantidad">(7)</span>
 								</button>
 							</li>
@@ -98,6 +110,8 @@ export default class Online extends Component {
 													className="link"
 												>
 													<img src={trainer.imgPath} alt={trainer.name} />
+													{/* SACAR */}
+													{/* <img src='../images/user.png' /> */}
 												</Link>
 											</div>
 											<div className="descripcion-profe">

@@ -1,0 +1,40 @@
+.container-admin {
+    max-width: 15%;
+    height: calc(100vh - 70px);
+    padding-top: 70px;
+    background-color: rgb(34, 39, 60);
+    border-bottom: 1px solid rgb(200, 200, 200);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .navigation {
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+
+        span {
+            font-size: 20px;
+        }
+        
+        ul {
+            width: 100%;
+            padding-left: 0;
+            padding-top: 10px;
+            list-style-type: none;
+        }
+
+        li {
+            width: 100%;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgb(200, 200, 200);
+            cursor: pointer;
+
+            &:hover {
+                color: rgb(200, 200, 200);
+            }
+        }
+    }
+}

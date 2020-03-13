@@ -38,6 +38,8 @@ export default class Trainer extends Component {
 				<div className="trainer">
 					<div className="nombre">
 						<img src={trainer.imgPath} alt={trainer.name} />
+						{/* SACAR */}
+						{/* <img src='../../images/user.png' /> */}
 						<span className="name">
 							{trainer.name}
 							<div className="stars">
