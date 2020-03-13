@@ -1,0 +1,29 @@
+.container-info {
+    min-height: 90vh;
+    padding-top: 70px;
+
+    .planificacion {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 20px;
+
+        .tab-content {
+            min-height: 500px;
+            background-color: #fff;
+            border-radius: 4px;
+            display: flex;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .accordion {
+            width: 700px;
+        }
+
+        .left {
+            text-align: left;
+        }
+    }
+}

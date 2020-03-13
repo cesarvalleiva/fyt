@@ -45,8 +45,8 @@ function Navbar(props) {
 									</Dropdown.Toggle>
 
 									<Dropdown.Menu>
-										<Dropdown.Item href="#/action-1">Mi perfil</Dropdown.Item>
-										<Dropdown.Item href="#/action-2">Mis planes</Dropdown.Item>
+										<Dropdown.Item href="/profile">Mi perfil</Dropdown.Item>
+										<Dropdown.Item href="/user">Mis planes</Dropdown.Item>
 										<Dropdown.Divider />
 										<Dropdown.Item href="#/action-3">
 											<Link to="" onClick={handleLogout}>
@@ -63,8 +63,8 @@ function Navbar(props) {
 									</Dropdown.Toggle>
 
 									<Dropdown.Menu>
-										<Dropdown.Item href="#/action-1">Mi perfil</Dropdown.Item>
-										<Dropdown.Item href="#/action-2">Mis alumnos</Dropdown.Item>
+										<Dropdown.Item href="/user">Mi perfil</Dropdown.Item>
+										<Dropdown.Item href="/admin">Mis alumnos</Dropdown.Item>
 										<Dropdown.Divider />
 										<Dropdown.Item href="#/action-3">
 											<Link to="" onClick={handleLogout}>

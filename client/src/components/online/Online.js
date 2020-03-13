@@ -128,8 +128,7 @@ export default class Online extends Component {
 													{trainer.name}
 												</Link>
 												<div className="planes">
-													Perder peso, Ganar masa muscular, Perder peso, Ganar masa muscular,
-													Perder peso, Ganar masa muscular, Perder peso, Ganar masa muscular
+													Profesor de educación física. Más de 10 años de experiencia en el sector.
 												</div>
 												<div className="footer-card">
 													<div className="stars">

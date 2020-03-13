@@ -1,0 +1,63 @@
+.container-profile {
+    padding-top: 70px;
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+
+    .profile {
+        width: 30%;
+        height: 77vh;
+        margin-top: 10px;
+        text-align: left;
+        border-radius: 4px;
+        padding-top: 20px;
+        background-color: #fff;
+        display: flex;
+        padding-bottom: 0;
+        flex-direction: column;
+
+        .img-user {
+            width: 30%;
+            margin: 0 auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .input, .titulo {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .input {
+            margin-bottom: 10px;
+        }
+
+        .titulo {
+            margin-bottom: 5px;
+        }
+
+        .email {
+            margin-bottom: 30px;
+        }
+
+        .btn-guardar {
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 0;
+        }
+    }
+
+    .avance {
+        width: 69%;
+        min-height: 70vh;
+        margin: 10px 0;
+        border-radius: 5px;
+        background-color: #fff;
+
+        img {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+    }
+}

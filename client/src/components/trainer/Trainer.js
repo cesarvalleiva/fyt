@@ -33,13 +33,12 @@ export default class Trainer extends Component {
 
 	render() {
 		const { trainer } = this.state;
+
 		return (
 			<div className="container-trainer">
 				<div className="trainer">
 					<div className="nombre">
 						<img src={trainer.imgPath} alt={trainer.name} />
-						{/* SACAR */}
-						{/* <img src='../../images/user.png' /> */}
 						<span className="name">
 							{trainer.name}
 							<div className="stars">
@@ -50,6 +49,7 @@ export default class Trainer extends Component {
 								<Star /> <span className="comentarios"> - 19 comentarios</span>
 							</div>
 							<span className="sobreMi">Sobre mi: </span>
+							<span className="sobremi-texto">Profesor de educación física. Más de 10 años de experiencia en el sector. </span>
 						</span>
 					</div>
 					<div className="contacto">
@@ -62,13 +62,13 @@ export default class Trainer extends Component {
 					<div className="especialidad">
 						<span>Perder peso</span>
 						<div className="caracteristica">
-							<Check /> uno
+							<Check /> Planes personalizados
 						</div>
 						<div className="caracteristica">
-							<Check /> dos
+							<Check /> Enfoque en la pérdida de grasa corporal
 						</div>
 						<div className="caracteristica">
-							<Check /> tres
+							<Check /> Aeróbicos y musculación
 						</div>
 						<div className="comprar-plan">
 							<Button variant="none" className="boton-comprar">
@@ -79,13 +79,13 @@ export default class Trainer extends Component {
 					<div className="especialidad">
 						<span>Ganar masa muscular</span>
 						<div className="caracteristica">
-							<Check /> uno
+							<Check /> Consolidación muscular
 						</div>
 						<div className="caracteristica">
-							<Check /> dos
+							<Check /> Definición
 						</div>
 						<div className="caracteristica">
-							<Check /> tres
+							<Check /> Competencias
 						</div>
 						<div className="comprar-plan">
 							<Button variant="none" className="boton-comprar">
@@ -96,13 +96,13 @@ export default class Trainer extends Component {
 					<div className="especialidad">
 						<span>Maratón</span>
 						<div className="caracteristica">
-							<Check /> uno
+							<Check /> 10 km
 						</div>
 						<div className="caracteristica">
-							<Check /> dos
+							<Check /> 21 km
 						</div>
 						<div className="caracteristica">
-							<Check /> tres
+							<Check /> 42 km
 						</div>
 						<div className="comprar-plan">
 							<Button variant="none" className="boton-comprar">
@@ -113,9 +113,9 @@ export default class Trainer extends Component {
 				</div>
 				<div className="carousel">
 					<Carousel>
-						<Carousel.Item>Comment 1</Carousel.Item>
-						<Carousel.Item>Comment 2</Carousel.Item>
-						<Carousel.Item>Comment 3</Carousel.Item>
+						<Carousel.Item>Excelente profesor. Te acompaña en todo momento</Carousel.Item>
+						<Carousel.Item>Sus rutinas son increíbles.</Carousel.Item>
+						<Carousel.Item>Marqué mi mejor tiempo en la maratón que preparé con él!</Carousel.Item>
 					</Carousel>
 				</div>
 			</div>

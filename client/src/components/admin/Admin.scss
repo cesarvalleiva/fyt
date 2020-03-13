@@ -1,9 +1,15 @@
+.total {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
 .container-admin {
-    max-width: 15%;
-    height: calc(100vh - 70px);
+    width: 15%;
+    height: 100vh;
     padding-top: 70px;
     background-color: rgb(34, 39, 60);
-    border-bottom: 1px solid rgb(200, 200, 200);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -36,5 +42,23 @@
                 color: rgb(200, 200, 200);
             }
         }
+
+        .link-navigation {
+            color: #fff;
+
+             &:hover  {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.container-info-admin {
+    width: 84%;
+    padding-top: 80px;
+    text-align: left;
+
+    .link {
+        color:  rgb(34, 39, 60);
     }
 }
